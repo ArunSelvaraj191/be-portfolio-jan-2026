@@ -29,6 +29,10 @@ console.log("PORT from env:", PORT, process.env.MONGO_URI);
 app.use("/auth", authRotes);
 app.use("/user", userRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Deployment");
+});
+
 mongoose
   .connect(MONGO_URI)
   .then(() => {
